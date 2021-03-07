@@ -9,3 +9,5 @@ rclone purge putio:Movies
 
 echo "Make Movies Folder"
 rclone mkdir putio:Movies
+
+sleep 60
