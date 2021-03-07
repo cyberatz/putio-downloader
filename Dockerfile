@@ -1,4 +1,4 @@
-FROM rclone:latest
+FROM rclone/rclone:latest
 RUN apk update  && \
     apk add supervisor 
 
