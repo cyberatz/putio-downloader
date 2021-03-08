@@ -7,9 +7,9 @@ rclone sync -P putio: /data/
 
 #echo "Delete from Putio"
 #rclone purge putio:Movies
-rclone purge putio: /data/
+rclone purge putio: 
 
 #echo "Make Movies Folder"
-#rclone mkdir putio:Movies
+rclone mkdir putio:Movies
 
 sleep 60
