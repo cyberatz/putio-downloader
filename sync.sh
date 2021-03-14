@@ -20,6 +20,7 @@ echo "Delete from Putio"
 #for i in $(rclone lsd putio:  | sed 's/\-1//g' | sed 's/\([0-9][0-9][0-9][0-9]\)\-\([0-9][0-9]\)\-\([0-9][0-9]\)//g' | sed 's/\([0-9][0-9]\)\:\([0-9][0-9]\)\:\([0-9][0-9]\)//g' | sed 's/\ \ \ //g' | awk -F'  ' '{print $1}') ;do echo "$i";done
 #for i in $(rclone lsd putio:  | sed 's/\-1//g' | sed 's/\([0-9][0-9][0-9][0-9]\)\-\([0-9][0-9]\)\-\([0-9][0-9]\)//g' | sed 's/\([0-9][0-9]\)\:\([0-9][0-9]\)\:\([0-9][0-9]\)//g' | sed 's/\ \ \ //g' | awk -F'  ' '{print $1}') ;do rclone purge putio:"$i";done
 for i in $(rclone lsd putio:   | sed 's/\([0-9][0-9][0-9][0-9]\)\-\([0-9][0-9]\)\-\([0-9][0-9]\)//g' | sed 's/\([0-9][0-9]\)\:\([0-9][0-9]\)\:\([0-9][0-9]\)//g' | sed 's/-1//g' | sed 's/ \+ //g') ;do rclone purge putio:"$i";done
+for i in $(rclone ls putio: ) ;do rclone deletefile putio:"$i";done
 
 IFS=$SAVEIFS
 
