@@ -1,11 +1,13 @@
 #!/bin/sh
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
+mkdir -p /data/temp /data/data
 
 echo "Sync downloads"
 #rclone sync putio:Movies /data
 #rclone sync -P putio:Movies /data/
-rclone sync -P putio: /data/
+rclone sync -P putio: /data/temp/
+mv /data/temp/* /data/data/ 
 
 #echo "Check status of downloads"
 
