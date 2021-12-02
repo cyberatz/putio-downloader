@@ -1,6 +1,7 @@
 # putio-downloader
 
 ## Sample compose file
+```
 version: '3'
 services:
   rclone:
@@ -16,3 +17,6 @@ services:
     restart: unless-stopped
     #entrypoint: ["tail", "-f", "/dev/null"]
     entrypoint: ["supervisord", "-n", "-c", "/etc/supervisord.conf"]
+```
+
+
